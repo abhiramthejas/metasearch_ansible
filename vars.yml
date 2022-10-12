@@ -1,0 +1,27 @@
+docker_volume:
+  - caddy-config
+  - caddy-data
+docker_network:
+  - searxng
+cap_add_searxng:
+  - CHOWN
+  - SETGID
+  - SETUID
+  - DAC_OVERRIDE
+cap_add_redis:
+  - SETGID
+  - SETUID
+  - DAC_OVERRIDE
+cap_add_caddy:
+  - NET_BIND_SERVICE
+  - DAC_OVERRIDE
+
+service_install:
+  - docker
+  - git
+
+service_list:
+ - docker
+
+host: search.abhiramthejas.online
+email: abhirampanakkal@gmail.com
